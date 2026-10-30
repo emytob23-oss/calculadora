@@ -1,0 +1,825 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+  #oys-calculadora,
+  #oys-calculadora * {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif !important;
+  }
+
+  #oys-calculadora {
+    --azul: #1d1d1f;
+    --turquesa: #0071e3;
+
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 20px 40px 30px;
+    border-radius: 28px;
+
+    background: #f5f5f7;
+    color: #1d1d1f;
+
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      "SF Pro Display",
+      "SF Pro Text",
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  #oys-calculadora .oys-etiqueta {
+    color: #6e6e73;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 1.6px;
+    text-align: center;
+  }
+
+  #oys-calculadora h2 {
+    max-width: 720px;
+    margin: 14px auto 30px;
+    padding: 0;
+
+    color: #1d1d1f;
+    font-family: inherit;
+    font-size: clamp(30px, 4.5vw, 45px);
+
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -2px;
+    text-align: center;
+  }
+
+  #oys-calculadora .oys-intro {
+    max-width: 560px;
+    margin: 0 auto 42px;
+    padding: 0;
+
+    color: #6e6e73;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.3px;
+    text-align: center;
+  }
+
+  #oys-calculadora .oys-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 22px;
+  }
+
+  #oys-calculadora .oys-panel {
+    min-width: 0;
+    padding: 34px;
+    border: 1px solid rgba(0, 0, 0, 0.035);
+    border-radius: 24px;
+
+    background: #fff;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.025);
+  }
+
+  #oys-calculadora h3 {
+    display: flex;
+    align-items: center;
+
+    margin: 0 0 24px;
+    padding: 0;
+
+    color: #1d1d1f;
+    font-family: inherit;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.5px;
+  }
+
+  #oys-calculadora .oys-numero {
+    display: inline-flex;
+    flex: 0 0 28px;
+    align-items: center;
+    justify-content: center;
+
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    border: 1px solid #d2d2d7;
+    border-radius: 50%;
+
+    background: transparent;
+    color: #6e6e73;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  #oys-calculadora label {
+    display: block;
+    margin: 20px 0 9px;
+
+    color: #1d1d1f;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  #oys-calculadora input,
+  #oys-calculadora select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 54px;
+    height: auto;
+    margin: 0;
+    padding: 14px;
+    border: 1px solid #86868b;
+    border-radius: 12px;
+
+    background: #fff;
+    color: #1d1d1f;
+    font: inherit;
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+
+    transition:
+      border-color 0.18s ease,
+      box-shadow 0.18s ease,
+      background-color 0.18s ease;
+  }
+
+  #oys-calculadora select {
+    padding-right: 28px;
+    cursor: pointer;
+  }
+
+  #oys-calculadora input:hover,
+  #oys-calculadora select:hover {
+    border-color: #1d1d1f;
+  }
+
+  #oys-calculadora input:focus,
+  #oys-calculadora select:focus {
+    border-color: #0071e3;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 125, 250, 0.18);
+  }
+
+  #oys-calculadora input:disabled {
+    border-color: #e5e5e7;
+    background: #f5f5f7;
+    color: #86868b;
+    cursor: default;
+  }
+
+  #oys-calculadora .oys-fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  #oys-calculadora .oys-ayuda {
+    margin: 10px 0 0;
+    padding: 0;
+
+    color: #6e6e73;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  #oys-calculadora .oys-separador {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #e8e8ed;
+  }
+
+  #oys-calculadora .oys-formula {
+    margin-top: 28px;
+    padding: 18px;
+    border: 0;
+    border-radius: 14px;
+
+    background: #f5f5f7;
+    color: #6e6e73;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  #oys-calculadora .oys-formula strong {
+    color: #1d1d1f;
+    font-weight: 500;
+  }
+
+  #oys-calculadora .oys-resultado {
+    display: flex;
+    flex-direction: column;
+background: white;
+    background: #fff;
+    color: #1d1d1f;
+  }
+
+  #oys-calculadora .oys-resultado > .oys-etiqueta {
+    margin-top: 8px;
+    color: #6e6e73;
+    font-size: 11px;
+    letter-spacing: 1.3px;
+  }
+
+  #oys-calculadora .oys-precio {
+    margin-top: 18px;
+
+    color: #1d1d1f;
+    font-size: clamp(32px, 4.2vw, 52px);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+  }
+
+  #oys-calculadora .oys-impuesto {
+    min-height: 18px;
+    margin: 12px 0 32px;
+    padding: 0;
+
+    color: #6e6e73;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  #oys-calculadora .oys-detalle {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+
+    padding: 15px 0;
+    border-bottom: 1px solid #e8e8ed;
+
+    color: #6e6e73;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  #oys-calculadora .oys-detalle strong {
+    color: #1d1d1f;
+    font-weight: 500;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+  }
+
+  #oys-calculadora .oys-utilidad {
+    margin-top: 26px;
+    padding: 20px;
+    border: 0;
+    border-radius: 16px;
+
+    background: #f5f5f7;
+  }
+
+  #oys-calculadora .oys-utilidad .oys-detalle {
+    padding: 5px 0;
+    border: 0;
+  }
+
+  #oys-calculadora #oys-ganancia {
+    color: #008009;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+  }
+
+  #oys-calculadora .oys-barra {
+    height: 5px;
+    margin-top: 16px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    background: #e3e3e8;
+  }
+
+  #oys-calculadora .oys-barra span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+
+    background: #0071e3;
+    transition: width 0.25s ease;
+  }
+
+  #oys-calculadora .oys-nota {
+    margin: 22px 0 28px;
+    padding: 0;
+
+    color: #6e6e73;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  #oys-calculadora .oys-botones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-top: auto;
+  }
+
+  #oys-calculadora button {
+    min-height: 44px;
+    padding: 12px 19px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+
+    background: transparent;
+    color: #0066cc;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    cursor: pointer;
+
+    transition:
+      background-color 0.18s ease,
+      box-shadow 0.18s ease;
+  }
+
+  #oys-calculadora button.oys-principal {
+    border-color: #0071e3;
+    background: #0071e3;
+    color: #fff;
+  }
+
+  #oys-calculadora button.oys-principal:hover {
+    border-color: #0077ed;
+    background: #0077ed;
+  }
+
+  #oys-calculadora button:not(.oys-principal):hover {
+    background: #f5f5f7;
+  }
+
+  #oys-calculadora button:focus-visible {
+    outline: 3px solid rgba(0, 125, 250, 0.5);
+    outline-offset: 4px;
+  }
+
+  #oys-calculadora button:disabled {
+    opacity: 0.45;
+    cursor: default;
+  }
+
+  #oys-calculadora .oys-error {
+    color: #b64400;
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  #oys-calculadora .oys-error:not(:empty) {
+    margin-bottom: 16px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #fff4eb;
+  }
+
+  #oys-calculadora .oys-estado {
+    min-height: 17px;
+    margin-top: 12px;
+
+    color: #0066cc;
+    font-size: 11px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  #oys-calculadora .oys-pie {
+    max-width: 680px;
+    margin: 26px auto 0;
+
+    color: #6e6e73;
+    font-size: 10px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  @media (max-width: 980px) {
+    #oys-calculadora {
+      padding: 44px 24px 26px;
+    }
+
+    #oys-calculadora .oys-panel {
+      padding: 24px;
+    }
+
+    #oys-calculadora .oys-fila {
+      gap: 12px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    #oys-calculadora {
+      padding: 36px 16px 24px;
+      border-radius: 20px;
+    }
+
+    #oys-calculadora h2 {
+      max-width: 400px;
+      font-size: 36px;
+      letter-spacing: -1.3px;
+    }
+
+    #oys-calculadora .oys-intro {
+      max-width: 330px;
+      margin-bottom: 28px;
+      font-size: 16px;
+    }
+
+    #oys-calculadora .oys-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    #oys-calculadora .oys-panel {
+      padding: 24px;
+      border-radius: 20px;
+    }
+
+    #oys-calculadora .oys-precio {
+      font-size: 44px;
+      letter-spacing: -1.8px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    #oys-calculadora .oys-fila {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    #oys-calculadora .oys-panel {
+      padding: 20px;
+    }
+
+    #oys-calculadora h2 {
+      font-size: 30px;
+    }
+
+    #oys-calculadora .oys-precio {
+      font-size: 36px;
+    }
+
+    #oys-calculadora .oys-detalle {
+      gap: 10px;
+      font-size: 12px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #oys-calculadora *,
+    #oys-calculadora *::before,
+    #oys-calculadora *::after {
+      transition: none !important;
+    }
+  }
+  .img-style{
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    display:block;
+  }
+</style>
+
+<div id="oys-calculadora">
+  <img src="https://ortopedicos.co/wp-content/uploads/2026/10/Branding-Ortopedicos-y-Salud-10.png" class="img-style">
+
+  <h2>Calculadora de precios y margen</h2>
+ 
+
+  <div class="oys-grid">
+    <section class="oys-panel">
+      <h3><span class="oys-numero">1</span>Determina el costo real</h3>
+
+      <label for="oys-costo">Precio de compra antes de IVA ($)</label>
+      <input
+        id="oys-costo"
+        type="number"
+        min="0"
+        step="any"
+        value="100"
+      >
+
+      <div class="oys-fila">
+        <div>
+          <label for="oys-iva-compra">IVA de compra (%)</label>
+          <input
+            id="oys-iva-compra"
+            type="number"
+            min="0"
+            max="100"
+            step="any"
+            value="19"
+          >
+        </div>
+
+        <div>
+          <label for="oys-descontable">¿IVA descontable?</label>
+          <select id="oys-descontable">
+            <option value="si">Sí, es descontable</option>
+            <option value="no">No, se suma al costo</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="oys-ayuda">
+        Si el IVA es descontable, no forma parte del costo.
+        Si no es descontable y debe llevarse al costo, se suma.
+      </p>
+
+      <div class="oys-separador">
+        <h3><span class="oys-numero">2</span>Define tu margen</h3>
+
+        <label for="oys-margen">Margen bruto sobre ventas (%)</label>
+        <input
+          id="oys-margen"
+          type="number"
+          min="0"
+          max="99.99"
+          step="any"
+          value="35"
+        >
+
+        <p class="oys-ayuda">
+          Porcentaje del precio antes de IVA que corresponde a utilidad bruta.
+        </p>
+
+        <div class="oys-fila">
+          <div>
+            <label for="oys-tipo-venta">Tratamiento en la venta</label>
+            <select id="oys-tipo-venta">
+              <option value="gravado">Gravado con IVA</option>
+              <option value="excluido">Excluido de IVA</option>
+              <option value="exento">Exento: IVA 0%</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="oys-iva-venta">IVA de venta (%)</label>
+            <input
+              id="oys-iva-venta"
+              type="number"
+              min="0"
+              max="100"
+              step="any"
+              value="19"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="oys-formula">
+        <strong>Precio antes de IVA = costo real ÷ (1 − margen)</strong>
+        <br>
+        Luego se agrega el IVA de venta, cuando corresponda.
+      </div>
+    </section>
+
+    <section class="oys-panel oys-resultado" aria-live="polite">
+      <div class="oys-etiqueta">PRECIO FINAL AL CLIENTE</div>
+      <div class="oys-precio" id="oys-total">—</div>
+      <p class="oys-impuesto" id="oys-texto-iva"></p>
+      <div class="oys-error" id="oys-error" role="alert"></div>
+
+      <div class="oys-detalle">
+        <span>Total pagado al proveedor</span>
+        <strong id="oys-pagado">—</strong>
+      </div>
+
+      <div class="oys-detalle">
+        <span>IVA de compra</span>
+        <strong id="oys-iva-compra-valor">—</strong>
+      </div>
+
+      <div class="oys-detalle">
+        <span>Costo contable real</span>
+        <strong id="oys-costo-real">—</strong>
+      </div>
+
+      <div class="oys-detalle">
+        <span>Precio antes de IVA</span>
+        <strong id="oys-base">—</strong>
+      </div>
+
+      <div class="oys-detalle">
+        <span>IVA de venta</span>
+        <strong id="oys-iva-venta-valor">—</strong>
+      </div>
+
+      <div class="oys-utilidad">
+        <div class="oys-detalle">
+          <span>Utilidad bruta</span>
+          <strong id="oys-ganancia">—</strong>
+        </div>
+
+        <div class="oys-detalle">
+          <span>Margen sobre ventas</span>
+          <strong id="oys-margen-real">—</strong>
+        </div>
+
+        <div class="oys-barra">
+          <span id="oys-barra-margen"></span>
+        </div>
+      </div>
+
+
+      <div class="oys-botones">
+        <button type="button" class="oys-principal" id="oys-copiar">
+          Copiar resultado
+        </button>
+        <button type="button" id="oys-restablecer">
+          Restablecer ejemplo
+        </button>
+      </div>
+
+      <div class="oys-estado" id="oys-estado" role="status"></div>
+    </section>
+  </div>
+
+  
+</div>
+
+<script>
+(function () {
+  const raiz = document.getElementById("oys-calculadora");
+  if (!raiz || raiz.dataset.iniciada) return;
+  raiz.dataset.iniciada = "si";
+
+  const elemento = (id) => raiz.querySelector("#oys-" + id);
+
+  const moneda = new Intl.NumberFormat("es-CO", {
+    style: "currency",
+    currency: "COP",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+
+  let resumen = "";
+
+  const salidas = [
+    "total",
+    "pagado",
+    "iva-compra-valor",
+    "costo-real",
+    "base",
+    "iva-venta-valor",
+    "ganancia",
+    "margen-real"
+  ];
+
+  function calcular() {
+    const gravado = elemento("tipo-venta").value === "gravado";
+    elemento("iva-venta").disabled = !gravado;
+
+    const campos = ["costo", "iva-compra", "margen"];
+    if (gravado) campos.push("iva-venta");
+
+    const validos = campos.every(function (id) {
+      const campo = elemento(id);
+      return (
+        campo.value.trim() !== "" &&
+        Number.isFinite(campo.valueAsNumber) &&
+        campo.checkValidity()
+      );
+    });
+
+    const margen = elemento("margen").valueAsNumber;
+
+    if (!validos || margen >= 100) {
+      elemento("error").textContent =
+        "Ingresa valores válidos. El margen debe ser menor al 100%.";
+
+      salidas.forEach((id) => elemento(id).textContent = "—");
+      elemento("texto-iva").textContent = "";
+      elemento("barra-margen").style.width = "0%";
+      elemento("copiar").disabled = true;
+      resumen = "";
+      return;
+    }
+
+    const costoCompra = elemento("costo").valueAsNumber;
+    const tasaCompra = elemento("iva-compra").valueAsNumber / 100;
+    const descontable = elemento("descontable").value === "si";
+    const tasaVenta = gravado
+      ? elemento("iva-venta").valueAsNumber / 100
+      : 0;
+
+    const ivaCompra = costoCompra * tasaCompra;
+    const pagadoProveedor = costoCompra + ivaCompra;
+    const costoReal = costoCompra + (descontable ? 0 : ivaCompra);
+    const precioBase = costoReal / (1 - margen / 100);
+    const ivaVenta = precioBase * tasaVenta;
+    const precioFinal = precioBase + ivaVenta;
+    const utilidadBruta = precioBase - costoReal;
+
+    if (![costoReal, precioBase, precioFinal, utilidadBruta]
+        .every(Number.isFinite)) {
+      elemento("error").textContent =
+        "Los valores son demasiado grandes. Revisa los datos.";
+      salidas.forEach((id) => elemento(id).textContent = "—");
+      elemento("texto-iva").textContent = "";
+      elemento("barra-margen").style.width = "0%";
+      elemento("copiar").disabled = true;
+      resumen = "";
+      return;
+    }
+
+    elemento("error").textContent = "";
+    elemento("copiar").disabled = false;
+
+    const valores = {
+      "total": precioFinal,
+      "pagado": pagadoProveedor,
+      "iva-compra-valor": ivaCompra,
+      "costo-real": costoReal,
+      "base": precioBase,
+      "iva-venta-valor": ivaVenta,
+      "ganancia": utilidadBruta
+    };
+
+    Object.entries(valores).forEach(function ([id, valor]) {
+      elemento(id).textContent = moneda.format(valor);
+    });
+
+    const margenTexto = precioBase > 0
+      ? margen.toLocaleString("es-CO") + " %"
+      : "No aplica";
+
+    elemento("margen-real").textContent = margenTexto;
+    elemento("barra-margen").style.width =
+      precioBase > 0 ? margen + "%" : "0%";
+
+    const tipo = elemento("tipo-venta").value;
+
+    elemento("texto-iva").textContent = gravado
+      ? "Incluye IVA de venta del " +
+        (tasaVenta * 100).toLocaleString("es-CO") + "%."
+      : tipo === "excluido"
+        ? "Producto excluido: sin IVA de venta."
+        : "Producto exento: IVA de venta del 0%.";
+
+    resumen = [
+      "ORTOPÉDICOS Y SALUD",
+      "Costo contable real: " + moneda.format(costoReal),
+      "Precio antes de IVA: " + moneda.format(precioBase),
+      "IVA de venta: " + moneda.format(ivaVenta),
+      "Precio final al cliente: " + moneda.format(precioFinal),
+      "Utilidad bruta: " + moneda.format(utilidadBruta),
+      "Margen sobre ventas: " + margenTexto
+    ].join("\n");
+  }
+
+  raiz.querySelectorAll("input, select").forEach(function (campo) {
+    campo.addEventListener("input", function () {
+      elemento("estado").textContent = "";
+      calcular();
+    });
+  });
+
+  elemento("restablecer").addEventListener("click", function () {
+    elemento("costo").value = 100;
+    elemento("iva-compra").value = 19;
+    elemento("descontable").value = "si";
+    elemento("margen").value = 35;
+    elemento("tipo-venta").value = "gravado";
+    elemento("iva-venta").value = 19;
+    elemento("estado").textContent = "";
+    calcular();
+  });
+
+  elemento("copiar").addEventListener("click", async function () {
+    try {
+      await navigator.clipboard.writeText(resumen);
+      elemento("estado").textContent = "Resultado copiado.";
+    } catch (error) {
+      elemento("estado").textContent =
+        "No se pudo copiar automáticamente. Selecciona los valores en pantalla.";
+    }
+  });
+
+  calcular();
+})();
+</script>
