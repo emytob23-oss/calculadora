@@ -1,3 +1,8 @@
+<!-- Iconos de Flaticon -->
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+
+<!-- Favicon para la pestaña del navegador -->
+<link rel="icon" type="image/png" href="https://ortopedicos.co/wp-content/uploads/2026/10/Branding-Ortopedicos-y-Salud-10.png">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
@@ -41,6 +46,10 @@
     line-height: 1.5;
     letter-spacing: 1.6px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
   }
 
   #oys-calculadora h2 {
@@ -103,23 +112,13 @@
     letter-spacing: -0.5px;
   }
 
-  #oys-calculadora .oys-numero {
+  #oys-calculadora .oys-icono {
     display: inline-flex;
-    flex: 0 0 28px;
     align-items: center;
     justify-content: center;
-
-    width: 28px;
-    height: 28px;
     margin-right: 10px;
-    border: 1px solid #d2d2d7;
-    border-radius: 50%;
-
-    background: transparent;
-    color: #6e6e73;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0;
+    font-size: 18px;
+    color: #0071e3;
   }
 
   #oys-calculadora label {
@@ -222,7 +221,6 @@
   #oys-calculadora .oys-resultado {
     display: flex;
     flex-direction: column;
-background: white;
     background: #fff;
     color: #1d1d1f;
   }
@@ -339,6 +337,10 @@ background: white;
   }
 
   #oys-calculadora button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     min-height: 44px;
     padding: 12px 19px;
     border: 1px solid transparent;
@@ -505,88 +507,35 @@ background: white;
 
   .dev{
     text-align: center;
-      font-family: "Poppins", sans-serif !important;
-      font-size: 10px;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 10px;
   }
 </style>
+
 <div>
-<div id="oys-calculadora">
-  <img src="https://ortopedicos.co/wp-content/uploads/2026/10/Branding-Ortopedicos-y-Salud-10.png" class="img-style">
+  <div id="oys-calculadora">
+    <img src="https://ortopedicos.co/wp-content/uploads/2026/10/Branding-Ortopedicos-y-Salud-10.png" class="img-style">
 
-  <h2>Calculadora de precios y margen</h2>
- 
+    <h2>Calculadora de precios y margen</h2>
 
-  <div class="oys-grid">
-    <section class="oys-panel">
-      <h3><span class="oys-numero">1</span>Determina el costo real</h3>
+    <div class="oys-grid">
+      <section class="oys-panel">
+        <h3><i class="fi fi-rr-box oys-icono"></i>1. Determina el costo real</h3>
 
-      <label for="oys-costo">Precio de compra antes de IVA ($)</label>
-      <input
-        id="oys-costo"
-        type="number"
-        min="0"
-        step="any"
-        value="100"
-      >
-
-      <div class="oys-fila">
-        <div>
-          <label for="oys-iva-compra">IVA de compra (%)</label>
-          <input
-            id="oys-iva-compra"
-            type="number"
-            min="0"
-            max="100"
-            step="any"
-            value="19"
-          >
-        </div>
-
-        <div>
-          <label for="oys-descontable">¿IVA descontable?</label>
-          <select id="oys-descontable">
-            <option value="si">Sí, es descontable</option>
-            <option value="no">No, se suma al costo</option>
-          </select>
-        </div>
-      </div>
-
-      <p class="oys-ayuda">
-        Si el IVA es descontable, no forma parte del costo.
-        Si no es descontable y debe llevarse al costo, se suma.
-      </p>
-
-      <div class="oys-separador">
-        <h3><span class="oys-numero">2</span>Define tu margen</h3>
-
-        <label for="oys-margen">Margen bruto sobre ventas (%)</label>
+        <label for="oys-costo">Precio de compra antes de IVA ($)</label>
         <input
-          id="oys-margen"
+          id="oys-costo"
           type="number"
           min="0"
-          max="99.99"
           step="any"
-          value="35"
+          value="100"
         >
-
-        <p class="oys-ayuda">
-          Porcentaje del precio antes de IVA que corresponde a utilidad bruta.
-        </p>
 
         <div class="oys-fila">
           <div>
-            <label for="oys-tipo-venta">Tratamiento en la venta</label>
-            <select id="oys-tipo-venta">
-              <option value="gravado">Gravado con IVA</option>
-              <option value="excluido">Excluido de IVA</option>
-              <option value="exento">Exento: IVA 0%</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="oys-iva-venta">IVA de venta (%)</label>
+            <label for="oys-iva-compra">IVA de compra (%)</label>
             <input
-              id="oys-iva-venta"
+              id="oys-iva-compra"
               type="number"
               min="0"
               max="100"
@@ -594,80 +543,132 @@ background: white;
               value="19"
             >
           </div>
+
+          <div>
+            <label for="oys-descontable">¿IVA descontable?</label>
+            <select id="oys-descontable">
+              <option value="si">Sí, es descontable</option>
+              <option value="no">No, se suma al costo</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <div class="oys-formula">
-        <strong>Precio antes de IVA = costo real ÷ (1 − margen)</strong>
-        <br>
-        Luego se agrega el IVA de venta, cuando corresponda.
-      </div>
-    </section>
+        <p class="oys-ayuda">
+          Si el IVA es descontable, no forma parte del costo.
+          Si no es descontable y debe llevarse al costo, se suma.
+        </p>
 
-    <section class="oys-panel oys-resultado" aria-live="polite">
-      <div class="oys-etiqueta">PRECIO FINAL AL CLIENTE</div>
-      <div class="oys-precio" id="oys-total">—</div>
-      <p class="oys-impuesto" id="oys-texto-iva"></p>
-      <div class="oys-error" id="oys-error" role="alert"></div>
+        <div class="oys-separador">
+          <h3><i class="fi fi-rr-chart-histogram oys-icono"></i>2. Define tu margen</h3>
 
-      <div class="oys-detalle">
-        <span>Total pagado al proveedor</span>
-        <strong id="oys-pagado">—</strong>
-      </div>
+          <label for="oys-margen">Margen bruto sobre ventas (%)</label>
+          <input
+            id="oys-margen"
+            type="number"
+            min="0"
+            max="99.99"
+            step="any"
+            value="35"
+          >
 
-      <div class="oys-detalle">
-        <span>IVA de compra</span>
-        <strong id="oys-iva-compra-valor">—</strong>
-      </div>
+          <p class="oys-ayuda">
+            Porcentaje del precio antes de IVA que corresponde a utilidad bruta.
+          </p>
 
-      <div class="oys-detalle">
-        <span>Costo contable real</span>
-        <strong id="oys-costo-real">—</strong>
-      </div>
+          <div class="oys-fila">
+            <div>
+              <label for="oys-tipo-venta">Tratamiento en la venta</label>
+              <select id="oys-tipo-venta">
+                <option value="gravado">Gravado con IVA</option>
+                <option value="excluido">Excluido de IVA</option>
+                <option value="exento">Exento: IVA 0%</option>
+              </select>
+            </div>
 
-      <div class="oys-detalle">
-        <span>Precio antes de IVA</span>
-        <strong id="oys-base">—</strong>
-      </div>
+            <div>
+              <label for="oys-iva-venta">IVA de venta (%)</label>
+              <input
+                id="oys-iva-venta"
+                type="number"
+                min="0"
+                max="100"
+                step="any"
+                value="19"
+              >
+            </div>
+          </div>
+        </div>
 
-      <div class="oys-detalle">
-        <span>IVA de venta</span>
-        <strong id="oys-iva-venta-valor">—</strong>
-      </div>
+        <div class="oys-formula">
+          <strong>Precio antes de IVA = costo real ÷ (1 − margen)</strong>
+          <br>
+          Luego se agrega el IVA de venta, cuando corresponda.
+        </div>
+      </section>
 
-      <div class="oys-utilidad">
+      <section class="oys-panel oys-resultado" aria-live="polite">
+        <div class="oys-etiqueta"><i class="fi fi-rr-tags"></i> PRECIO FINAL AL CLIENTE</div>
+        <div class="oys-precio" id="oys-total">—</div>
+        <p class="oys-impuesto" id="oys-texto-iva"></p>
+        <div class="oys-error" id="oys-error" role="alert"></div>
+
         <div class="oys-detalle">
-          <span>Utilidad bruta</span>
-          <strong id="oys-ganancia">—</strong>
+          <span>Total pagado al proveedor</span>
+          <strong id="oys-pagado">—</strong>
         </div>
 
         <div class="oys-detalle">
-          <span>Margen sobre ventas</span>
-          <strong id="oys-margen-real">—</strong>
+          <span>IVA de compra</span>
+          <strong id="oys-iva-compra-valor">—</strong>
         </div>
 
-        <div class="oys-barra">
-          <span id="oys-barra-margen"></span>
+        <div class="oys-detalle">
+          <span>Costo contable real</span>
+          <strong id="oys-costo-real">—</strong>
         </div>
-      </div>
 
+        <div class="oys-detalle">
+          <span>Precio antes de IVA</span>
+          <strong id="oys-base">—</strong>
+        </div>
 
-      <div class="oys-botones">
-        <button type="button" class="oys-principal" id="oys-copiar">
-          Copiar resultado
-        </button>
-        <button type="button" id="oys-restablecer">
-          Restablecer ejemplo
-        </button>
-      </div>
+        <div class="oys-detalle">
+          <span>IVA de venta</span>
+          <strong id="oys-iva-venta-valor">—</strong>
+        </div>
 
-      <div class="oys-estado" id="oys-estado" role="status"></div>
-    </section>
+        <div class="oys-utilidad">
+          <div class="oys-detalle">
+            <span>Utilidad bruta</span>
+            <strong id="oys-ganancia">—</strong>
+          </div>
+
+          <div class="oys-detalle">
+            <span>Margen sobre ventas</span>
+            <strong id="oys-margen-real">—</strong>
+          </div>
+
+          <div class="oys-barra">
+            <span id="oys-barra-margen"></span>
+          </div>
+        </div>
+
+        <div class="oys-botones">
+          <button type="button" class="oys-principal" id="oys-copiar">
+            <i class="fi fi-rr-copy"></i> Copiar resultado
+          </button>
+          <button type="button" id="oys-restablecer">
+            <i class="fi fi-rr-refresh"></i> Restablecer ejemplo
+          </button>
+        </div>
+
+        <div class="oys-estado" id="oys-estado" role="status"></div>
+      </section>
+    </div>
   </div>
-
-  
-</div><p class="dev">Desarrollado por Emy.</p>
+  <p class="dev">Desarrollado por Emy.</p>
 </div>
+
 <script>
 (function () {
   const raiz = document.getElementById("oys-calculadora");
