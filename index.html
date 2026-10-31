@@ -1,4 +1,3 @@
-<!-- Ortopédicos y Salud | Calculadora V9 -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
@@ -14,24 +13,24 @@
   --teal:#83E0DC;
   --blue:#5AA1C9;
   --green:#188065;
-  --ink:#36536a;
-  --line:#e1ebf2;
-  --soft:#f5f9fc;
+  --ink:#424245;
+  --line:#e8e8ed;
+  --soft:#f5f5f7;
 
   width:100%;
-  max-width:1150px;
+  max-width:1480px;
   min-width:0;
   margin:0 auto;
-  background:#fff;
-  color:var(--navy);
-  border:1px solid #d9e7ee;
-  border-radius:24px;
   overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:28px;
+  background:#fff;
+  color:#1d1d1f;
   font-family:'Poppins',Arial,sans-serif !important;
   font-size:14px;
   line-height:1.6;
   -webkit-text-size-adjust:100%;
-  box-shadow:0 18px 50px #0b254518;
+  box-shadow:0 16px 60px rgba(0,0,0,.045);
   container-type:inline-size;
 }
 
@@ -49,52 +48,45 @@
 
 /* Encabezado */
 #oys-calc-v9 .oys-head{
-  padding:34px 32px;
-  color:#fff;
-  background:
-    radial-gradient(circle at 92% 0,#83e0dc55,transparent 45%),
-    linear-gradient(120deg,#0B2545,#13406b);
+  padding:48px 44px 38px;
+  background:linear-gradient(120deg,#fafcfd,#f1f7fa);
 }
 
-#oys-calc-v9 .oys-head span{
-  display:inline-block;
-  max-width:100%;
-  padding:5px 12px;
-  border:1px solid #83e0dc55;
-  border-radius:999px;
-  background:#ffffff14;
-  color:var(--teal);
-  font-size:10.5px;
+#oys-calc-v9 .oys-brand{
+  display:block;
+  color:#638395;
+  font-size:11px;
   font-weight:600;
   line-height:1.6;
   letter-spacing:.12em;
 }
 
 #oys-calc-v9 h2{
-  margin:14px 0 8px !important;
+  margin:14px 0 12px !important;
   padding:0;
-  color:#fff;
-  font-size:clamp(22px,3.5vw,28px);
-  font-weight:700;
-  line-height:1.3;
+  color:#1d1d1f;
+  font-size:clamp(26px,3.2vw,40px);
+  font-weight:600;
+  line-height:1.2;
+  letter-spacing:-.04em;
 }
 
 #oys-calc-v9 .oys-head p{
-  max-width:680px;
+  max-width:800px;
   margin:0;
   padding:0;
-  color:#c6d9e8;
-  font-size:13px;
-  line-height:1.7;
+  color:#6e6e73;
+  font-size:14px;
+  line-height:1.8;
 }
 
 /* Distribución */
 #oys-calc-v9 .oys-grid{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);
   align-items:start;
-  gap:28px;
-  padding:28px;
+  gap:32px;
+  padding:36px;
   background:var(--soft);
 }
 
@@ -103,37 +95,30 @@
   min-width:0;
 }
 
+#oys-calc-v9 .oys-form,
+#oys-calc-v9 .oys-results{
+  min-width:0;
+  padding:32px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 4px 24px rgba(0,0,0,.025);
+}
+
 #oys-calc-v9 .oys-form{
   display:grid;
-  gap:16px;
+  gap:20px;
   align-content:start;
-  min-width:0;
-  padding:26px;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:18px;
-  box-shadow:0 4px 18px #0b25450a;
 }
 
 #oys-calc-v9 h3{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin:14px 0 0 !important;
+  margin:20px 0 0 !important;
   padding:0;
-  color:var(--navy);
-  font-size:15px;
-  font-weight:700;
+  color:#1d1d1f;
+  font-size:16px;
+  font-weight:600;
   line-height:1.5;
-}
-
-#oys-calc-v9 h3::before{
-  content:"";
-  flex:0 0 4px;
-  width:4px;
-  height:18px;
-  border-radius:4px;
-  background:linear-gradient(var(--teal),var(--blue));
+  letter-spacing:-.02em;
 }
 
 #oys-calc-v9 .oys-form > h3:first-child{
@@ -142,12 +127,12 @@
 
 #oys-calc-v9 label{
   display:grid;
-  gap:7px;
+  gap:8px;
   min-width:0;
   margin:0;
   color:var(--ink);
   font-size:12px;
-  font-weight:600;
+  font-weight:500;
   line-height:1.6;
 }
 
@@ -157,13 +142,13 @@
   width:100%;
   max-width:100%;
   min-width:0;
-  height:48px;
+  height:52px;
   margin:0;
-  padding:10px 12px;
-  border:1.5px solid #d3e1ea;
-  border-radius:11px;
-  background:var(--soft);
-  color:var(--navy);
+  padding:12px 14px;
+  border:1px solid #dcdce2;
+  border-radius:12px;
+  background:#fafafa;
+  color:#1d1d1f;
   font-size:16px;
   font-weight:400;
   line-height:1.4;
@@ -179,124 +164,99 @@
   text-overflow:ellipsis;
 }
 
-#oys-calc-v9 input:hover,
-#oys-calc-v9 select:hover{
-  border-color:var(--blue);
-}
-
 #oys-calc-v9 input:focus,
 #oys-calc-v9 select:focus{
   outline:0;
-  background:#fff;
   border-color:var(--blue);
-  box-shadow:0 0 0 4px #83e0dc55;
+  background:#fff;
+  box-shadow:0 0 0 4px rgba(90,161,201,.12);
 }
 
 #oys-calc-v9 small{
   display:block;
-  color:#688296;
+  color:#6e6e73;
   font-size:11px;
   font-weight:400;
-  line-height:1.6;
+  line-height:1.7;
 }
 
 #oys-calc-v9 .oys-two{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:12px;
+  gap:16px;
 }
 
 #oys-calc-v9 .oys-note{
   margin:0;
   padding:0;
-  color:#607d91;
+  color:#6e6e73;
   font-size:11px;
-  line-height:1.7;
+  line-height:1.8;
 }
 
 #oys-calc-v9 .oys-vat-note{
-  margin:6px 0;
-  padding:11px 13px;
-  border-left:3px solid var(--blue);
-  border-radius:0 8px 8px 0;
-  background:#e7f3f8;
-  color:#244e66;
+  margin:10px 0;
+  padding:13px 15px;
+  border:1px solid #e1edf3;
+  border-radius:12px;
+  background:#f2f8fb;
+  color:#476779;
   font-size:12px;
-  line-height:1.7;
+  line-height:1.75;
 }
 
 /* Resultados */
 #oys-calc-v9 .oys-results{
-  --result-pad:25px;
-  position:sticky;
-  top:15px;
   align-self:start;
-  min-width:0;
-  padding:var(--result-pad);
-  overflow:hidden;
-  border:1px solid var(--line);
-  border-radius:18px;
-  background:#fff;
-  box-shadow:0 10px 30px #0b254512;
 }
 
 #oys-calc-v9 .oys-overline{
   display:block;
-  margin:
-    calc(-1 * var(--result-pad))
-    calc(-1 * var(--result-pad))
-    0;
-  padding:24px var(--result-pad) 0;
-  background:var(--navy);
-  color:var(--teal);
-  font-size:11px;
+  margin:0;
+  padding:0;
+  color:#6e6e73;
+  font-size:10.5px;
   font-weight:600;
-  line-height:1.6;
-  letter-spacing:.12em;
+  line-height:1.7;
+  letter-spacing:.1em;
 }
 
 #oys-calc-v9 .oys-price{
-  margin:0 calc(-1 * var(--result-pad));
-  padding:8px var(--result-pad) 6px;
-  background:var(--navy);
-  color:#9af2d3;
-  font-size:clamp(26px,4vw,42px);
-  font-weight:700;
-  line-height:1.3;
-  letter-spacing:-.03em;
+  margin:10px 0;
+  padding:0;
+  color:var(--green);
+  font-size:clamp(32px,4vw,52px);
+  font-weight:600;
+  line-height:1.2;
+  letter-spacing:-.045em;
   font-variant-numeric:tabular-nums;
   overflow-wrap:anywhere;
 }
 
 #oys-calc-v9 .oys-sub{
-  margin:0 calc(-1 * var(--result-pad)) 18px;
-  padding:0 var(--result-pad) 22px;
-  background:var(--navy);
-  color:#b8cfe0;
+  margin:0 0 24px;
+  padding:0 0 22px;
+  border-bottom:1px solid var(--line);
+  color:#6e6e73;
   font-size:12px;
-  line-height:1.6;
+  line-height:1.7;
 }
 
 #oys-calc-v9 .oys-line{
   display:flex;
   align-items:baseline;
   justify-content:space-between;
-  gap:12px;
-  padding:10px 4px;
-  border-bottom:1px solid var(--line);
+  gap:18px;
+  padding:12px 2px;
+  border-bottom:1px solid #ededf0;
   font-size:12px;
-  line-height:1.6;
-  transition:background .15s;
-}
-
-#oys-calc-v9 .oys-line:hover{
-  background:var(--soft);
+  line-height:1.65;
 }
 
 #oys-calc-v9 .oys-line span{
   flex:1 1 0;
   min-width:0;
-  color:#48677d;
+  color:#6e6e73;
   overflow-wrap:anywhere;
 }
 
@@ -304,22 +264,20 @@
   flex:0 1 auto;
   min-width:0;
   max-width:60%;
-  color:var(--navy);
+  color:#1d1d1f;
   font-size:13px;
-  font-weight:700;
+  font-weight:600;
   text-align:right;
   font-variant-numeric:tabular-nums;
   overflow-wrap:anywhere;
 }
 
-#oys-calc-v9 .oys-highlight,
-#oys-calc-v9 .oys-highlight:hover{
-  margin:6px 0;
-  padding:12px;
+#oys-calc-v9 .oys-highlight{
+  margin:8px 0;
+  padding:15px 14px;
   border:0;
-  border-left:4px solid var(--green);
-  border-radius:8px;
-  background:#e6f7f1;
+  border-radius:12px;
+  background:#edf8f3;
 }
 
 #oys-calc-v9 .oys-highlight strong{
@@ -327,44 +285,51 @@
   font-size:14px;
 }
 
+#oys-calc-v9 [data-out="alert"],
+#oys-calc-v9 [data-out="currentInfo"]{
+  margin-top:12px;
+}
+
+#oys-calc-v9 [data-out="currentInfo"]:empty{
+  display:none;
+}
+
 /* Botones */
 #oys-calc-v9 button{
   max-width:100%;
-  min-height:48px;
+  min-height:52px;
   padding:13px 18px;
   border:0;
-  border-radius:12px;
+  border-radius:14px;
   font-size:13px;
-  font-weight:700;
+  font-weight:600;
   line-height:1.5;
   white-space:normal;
   overflow-wrap:anywhere;
   cursor:pointer;
   touch-action:manipulation;
-  transition:
-    transform .15s,
-    box-shadow .15s,
-    background .15s;
+  transition:background .15s,transform .15s;
 }
 
 #oys-calc-v9 button:focus-visible{
-  outline:3px solid var(--teal);
-  outline-offset:2px;
+  outline:3px solid var(--blue);
+  outline-offset:3px;
 }
 
 #oys-calc-v9 .oys-copy{
   width:100%;
-  margin-top:18px;
-  background:linear-gradient(120deg,#0B2545,#13406b);
+  margin-top:22px;
+  background:var(--navy);
   color:#fff;
-  box-shadow:0 6px 16px #0b254533;
 }
 
 #oys-calc-v9 .oys-reset{
+  width:100%;
   margin-top:6px;
-  border:1.5px solid #cfe0ea;
-  background:#fff;
-  color:var(--navy);
+  border:1px solid #e1e1e6;
+  background:var(--soft);
+  color:#1d1d1f;
+  font-weight:500;
 }
 
 /* Tabla */
@@ -372,24 +337,24 @@
   width:100%;
   max-width:100%;
   min-width:0;
-  margin:14px 0;
+  margin:16px 0;
   overflow-x:auto;
   overscroll-behavior-x:contain;
   -webkit-overflow-scrolling:touch;
   border:1px solid var(--line);
-  border-radius:12px;
+  border-radius:14px;
   scrollbar-width:thin;
-  scrollbar-color:var(--blue) #edf3f7;
+  scrollbar-color:#b3c9d6 #f5f5f7;
 }
 
 #oys-calc-v9 .oys-table-scroll:focus-visible{
   outline:3px solid var(--blue);
-  outline-offset:2px;
+  outline-offset:3px;
 }
 
 #oys-calc-v9 .oys-table{
   width:100%;
-  min-width:520px;
+  min-width:620px;
   margin:0;
   border:0;
   border-collapse:collapse;
@@ -400,7 +365,7 @@
 
 #oys-calc-v9 .oys-table th,
 #oys-calc-v9 .oys-table td{
-  padding:11px 10px;
+  padding:13px 12px;
   border:0;
   border-bottom:1px solid var(--line);
   text-align:right;
@@ -413,16 +378,16 @@
 }
 
 #oys-calc-v9 .oys-table thead th{
-  background:var(--navy);
-  color:#e3eef6;
-  font-size:10.5px;
+  background:#f0f3f6;
+  color:#526579;
+  font-size:10px;
   font-weight:600;
-  letter-spacing:.04em;
+  letter-spacing:.03em;
   text-transform:uppercase;
 }
 
 #oys-calc-v9 .oys-table tbody tr:nth-child(even){
-  background:var(--soft);
+  background:#fafafb;
 }
 
 #oys-calc-v9 .oys-table tbody tr:last-child td{
@@ -434,44 +399,51 @@
 }
 
 #oys-calc-v9 .oys-table tbody tr.oys-selected{
-  background:#dff4ef;
+  background:#e8f6f0;
   color:var(--green);
-  font-weight:700;
+  font-weight:600;
 }
 
 #oys-calc-v9 .oys-table tr.oys-selected td:first-child{
-  box-shadow:inset 4px 0 0 var(--green);
+  box-shadow:inset 3px 0 0 var(--green);
 }
 
 #oys-calc-v9 .oys-insight{
-  margin:12px 0;
-  padding:14px 16px;
-  border-left:4px solid var(--blue);
-  border-radius:12px;
-  background:#e9f5fa;
+  margin:16px 0;
+  padding:16px;
+  border:1px solid #e1edf3;
+  border-radius:14px;
+  background:#f2f8fb;
   color:var(--navy);
   font-size:12px;
-  line-height:1.75;
+  line-height:1.8;
   overflow-wrap:anywhere;
 }
 
 #oys-calc-v9 footer{
-  padding:18px 28px 26px;
+  padding:24px 44px 32px;
   border-top:1px solid var(--line);
   background:#fff;
-  color:#71899a;
+  color:#86868b;
   font-size:11px;
   line-height:1.8;
   overflow-wrap:anywhere;
 }
 
+/* Mouse */
 @media (hover:hover){
-  #oys-calc-v9 button:hover{
+  #oys-calc-v9 input:hover,
+  #oys-calc-v9 select:hover{
+    border-color:#a9bdca;
+  }
+
+  #oys-calc-v9 .oys-copy:hover{
+    background:#163b63;
     transform:translateY(-1px);
   }
 
   #oys-calc-v9 .oys-reset:hover{
-    background:#e5f4f6;
+    background:#ebebef;
   }
 }
 
@@ -479,80 +451,74 @@
 @media (max-width:960px){
   #oys-calc-v9 .oys-grid{
     grid-template-columns:minmax(0,1fr);
-    gap:20px;
-    padding:22px;
-  }
-
-  #oys-calc-v9 .oys-results{
-    position:static;
+    gap:24px;
+    padding:24px;
   }
 }
 
 /* Celular */
 @media (max-width:600px){
   #oys-calc-v9{
-    border-radius:18px;
+    border-radius:20px;
   }
 
   #oys-calc-v9 .oys-head{
-    padding:26px 20px;
+    padding:30px 22px;
   }
 
-  #oys-calc-v9 .oys-head span{
+  #oys-calc-v9 .oys-brand{
     font-size:10px;
     letter-spacing:.08em;
   }
 
+  #oys-calc-v9 h2{
+    font-size:27px;
+  }
+
+  #oys-calc-v9 .oys-head p{
+    font-size:12px;
+  }
+
   #oys-calc-v9 .oys-grid{
     gap:16px;
-    padding:14px;
+    padding:12px;
   }
 
-  #oys-calc-v9 .oys-form{
-    gap:16px;
-    padding:18px;
-    border-radius:14px;
-  }
-
+  #oys-calc-v9 .oys-form,
   #oys-calc-v9 .oys-results{
-    --result-pad:18px;
-    border-radius:14px;
-  }
-
-  #oys-calc-v9 .oys-price{
-    font-size:clamp(26px,7vw,38px);
+    padding:20px;
+    border-radius:16px;
   }
 
   #oys-calc-v9 .oys-two{
     grid-template-columns:minmax(0,1fr);
-    gap:16px;
   }
 
-  #oys-calc-v9 .oys-reset{
-    width:100%;
+  #oys-calc-v9 .oys-price{
+    font-size:clamp(28px,8vw,40px);
+  }
+
+  #oys-calc-v9 .oys-line{
+    gap:12px;
   }
 
   #oys-calc-v9 footer{
-    padding:18px 20px 22px;
+    padding:20px 22px 26px;
   }
 }
 
 @media (max-width:360px){
   #oys-calc-v9 .oys-head{
-    padding:22px 16px;
+    padding:24px 18px;
   }
 
   #oys-calc-v9 .oys-grid{
-    padding:10px;
-    gap:12px;
+    padding:8px;
   }
 
-  #oys-calc-v9 .oys-form{
-    padding:14px;
-  }
-
+  #oys-calc-v9 .oys-form,
   #oys-calc-v9 .oys-results{
-    --result-pad:14px;
+    padding:15px;
   }
 
   #oys-calc-v9 .oys-line{
@@ -566,20 +532,18 @@
   }
 }
 
-/* Adaptación al ancho real del módulo de Divi */
+/* Ajuste al ancho del módulo de Divi */
 @container (max-width:900px){
   #oys-calc-v9 .oys-grid{
     grid-template-columns:minmax(0,1fr);
-  }
-
-  #oys-calc-v9 .oys-results{
-    position:static;
+    gap:24px;
+    padding:24px;
   }
 }
 
 @container (max-width:540px){
   #oys-calc-v9 .oys-head{
-    padding:24px 18px;
+    padding:28px 20px;
   }
 
   #oys-calc-v9 .oys-grid{
@@ -587,31 +551,26 @@
     gap:16px;
   }
 
-  #oys-calc-v9 .oys-form{
-    padding:16px;
+  #oys-calc-v9 .oys-form,
+  #oys-calc-v9 .oys-results{
+    padding:18px;
   }
 
   #oys-calc-v9 .oys-two{
     grid-template-columns:minmax(0,1fr);
   }
 
-  #oys-calc-v9 .oys-results{
-    --result-pad:16px;
-  }
-
   #oys-calc-v9 h2{
-    font-size:23px;
+    font-size:26px;
   }
 
   #oys-calc-v9 .oys-price{
-    font-size:clamp(24px,8cqi,38px);
+    font-size:clamp(26px,8cqi,40px);
   }
 }
 
 @media (prefers-reduced-motion:reduce){
-  #oys-calc-v9 *,
-  #oys-calc-v9 *::before,
-  #oys-calc-v9 *::after{
+  #oys-calc-v9 *{
     transition:none !important;
   }
 }
@@ -619,8 +578,12 @@
 
 <div id="oys-calc-v9">
   <header class="oys-head">
-    <span>ORTOPÉDICOS Y SALUD · USO INTERNO</span>
+    <span class="oys-brand">
+      ORTOPÉDICOS Y SALUD · USO INTERNO
+    </span>
+
     <h2>Calculadora de precios y negociaciones</h2>
+
     <p>
       Calcula tu precio con formato en pesos y margen sugerido por cantidad;
       compara escenarios con IVA, comisiones, gastos y transporte.
@@ -673,7 +636,13 @@
       <div class="oys-two">
         <label>
           Cantidad de unidades
-          <input data-k="qty" type="number" value="1" min="1" step="1">
+          <input
+            data-k="qty"
+            type="number"
+            value="1"
+            min="1"
+            step="1"
+          >
         </label>
 
         <label>
@@ -695,7 +664,13 @@
 
       <label>
         Gastos fijos de venta por pedido (COP)
-        <input data-k="fees" type="number" value="0" min="0" step="100">
+        <input
+          data-k="fees"
+          type="number"
+          value="0"
+          min="0"
+          step="100"
+        >
         <small>
           Por ejemplo, empaque de entrega o gestión adicional.
           No incluyas el envío aquí.
@@ -720,10 +695,16 @@
 
       <label>
         Costo del envío al cliente por pedido (COP)
-        <input data-k="ship" type="number" value="0" min="0" step="100">
+        <input
+          data-k="ship"
+          type="number"
+          value="0"
+          min="0"
+          step="100"
+        >
         <small>
-          El costo que paga la empresa a la transportadora para este pedido
-          completo, no por unidad.
+          El costo que paga la empresa a la transportadora
+          para este pedido completo, no por unidad.
         </small>
       </label>
 
@@ -750,15 +731,15 @@
           <option value="19">19%</option>
         </select>
         <small>
-          Selecciona únicamente el tratamiento que corresponda al servicio
-          facturado. No modifica el IVA de los productos.
+          Selecciona únicamente el tratamiento que corresponda
+          al servicio facturado. No modifica el IVA de los productos.
         </small>
       </label>
 
       <p class="oys-note">
-        En modo «incluido», el envío se recupera dentro del precio del producto.
-        En modo «asumido», se descuenta de la ganancia y puede dejar el margen
-        por debajo del objetivo.
+        En modo «incluido», el envío se recupera dentro del precio
+        del producto. En modo «asumido», se descuenta de la ganancia
+        y puede dejar el margen por debajo del objetivo.
       </p>
 
       <div class="oys-two">
@@ -784,14 +765,26 @@
         </label>
       </div>
 
-      <button type="button" data-action="reset" class="oys-reset">
+      <button
+        type="button"
+        data-action="reset"
+        class="oys-reset"
+      >
         Restablecer
       </button>
     </section>
 
-    <section class="oys-results" aria-label="Resultados" aria-live="polite">
-      <span class="oys-overline">PRECIO RECOMENDADO POR UNIDAD</span>
+    <section
+      class="oys-results"
+      aria-label="Resultados"
+      aria-live="polite"
+    >
+      <span class="oys-overline">
+        PRECIO RECOMENDADO POR UNIDAD
+      </span>
+
       <div class="oys-price" data-out="price"></div>
+
       <p class="oys-sub" data-out="description"></p>
 
       <div class="oys-line">
@@ -914,15 +907,19 @@
 
       <p class="oys-note" data-out="currentInfo"></p>
 
-      <button type="button" class="oys-copy" data-action="copy">
+      <button
+        type="button"
+        class="oys-copy"
+        data-action="copy"
+      >
         Copiar resumen
       </button>
 
       <h3>Analizador de negociaciones</h3>
 
       <p class="oys-note">
-        Compara escenarios con la misma cantidad, impuestos, comisión y envío.
-        El ahorro se calcula frente a vender al 40%.
+        Compara escenarios con la misma cantidad, impuestos,
+        comisión y envío. El ahorro se calcula frente a vender al 40%.
       </p>
 
       <div
@@ -948,23 +945,26 @@
       <div class="oys-insight" data-out="negotiation"></div>
 
       <p class="oys-note">
-        La ganancia mostrada es contribución después de costos de producto,
-        envío, gasto fijo y comisión. No incluye nómina, arriendo, publicidad
-        general ni impuesto de renta.
+        La ganancia mostrada es contribución después de costos
+        de producto, envío, gasto fijo y comisión.
+        No incluye nómina, arriendo, publicidad general
+        ni impuesto de renta.
       </p>
     </section>
   </div>
 
   <footer>
-    El margen se propone automáticamente según cantidad: 1–2 unidades 40%,
-    3–5 unidades 35%, 6–11 unidades 30%, 12 o más unidades 25%.
-    Puede cambiarse manualmente. El margen objetivo se calcula sobre los
-    ingresos del pedido sin IVA, después de costos de mercancía, envío
-    recuperado (si aplica), gastos fijos de venta y comisión. No es utilidad
-    neta: faltan gastos generales e impuestos a la renta. El IVA descontable
-    y las tarifas deben verificarse con el contador y en World Office.
-    Las tarifas de compra y venta se seleccionan de forma independiente;
-    que un producto tenga IVA en la compra no implica por sí solo la misma
+    El margen se propone automáticamente según cantidad:
+    1–2 unidades 40%, 3–5 unidades 35%, 6–11 unidades 30%,
+    12 o más unidades 25%. Puede cambiarse manualmente.
+    El margen objetivo se calcula sobre los ingresos del pedido
+    sin IVA, después de costos de mercancía, envío recuperado
+    (si aplica), gastos fijos de venta y comisión.
+    No es utilidad neta: faltan gastos generales e impuestos
+    a la renta. El IVA descontable y las tarifas deben verificarse
+    con el contador y en World Office. Las tarifas de compra
+    y venta se seleccionan de forma independiente; que un producto
+    tenga IVA en la compra no implica por sí solo la misma
     tarifa de venta.
   </footer>
 </div>
@@ -974,11 +974,16 @@
   'use strict';
 
   const root = document.getElementById('oys-calc-v9');
+
   if (!root || root.dataset.initialized === 'true') return;
+
   root.dataset.initialized = 'true';
 
-  const input = key => root.querySelector('[data-k="' + key + '"]');
-  const out = key => root.querySelector('[data-out="' + key + '"]');
+  const input = key =>
+    root.querySelector('[data-k="' + key + '"]');
+
+  const out = key =>
+    root.querySelector('[data-out="' + key + '"]');
 
   const val = key => Math.max(
     0,
@@ -989,11 +994,12 @@
     ) || 0
   );
 
-  const fmt = number => Math.round(number).toLocaleString('es-CO', {
-    style: 'currency',
-    currency: 'COP',
-    maximumFractionDigits: 0
-  });
+  const fmt = number =>
+    Math.round(number).toLocaleString('es-CO', {
+      style:'currency',
+      currency:'COP',
+      maximumFractionDigits:0
+    });
 
   const ceil = (number, step) =>
     Math.ceil((number - 1e-8) / step) * step;
@@ -1007,11 +1013,13 @@
     const element = input('cost');
     const raw = element.value;
     const position = element.selectionStart ?? raw.length;
+
     const digitsBefore = (
       raw.slice(0, position).match(/\d/g) || []
     ).length;
 
     const digits = raw.replace(/\D/g, '');
+
     const display = digits
       ? '$' + Number(digits).toLocaleString('es-CO')
       : '$';
@@ -1080,7 +1088,10 @@
     const gross = revenue - cc * qty;
     const commission = total * pct;
     const contribution = gross - ship - fixed - commission;
-    const eff = revenue > 0 ? 100 * contribution / revenue : 0;
+
+    const eff = revenue > 0
+      ? 100 * contribution / revenue
+      : 0;
 
     const productMargin = productNet > 0
       ? 100 * (productNet - cc * qty) / productNet
@@ -1094,7 +1105,9 @@
         cc * qty +
         fixed +
         (absorbed ? 0 : ship) -
-        collectedShip * ((1 - marginRate) / (1 + ivas) - pct);
+        collectedShip * (
+          (1 - marginRate) / (1 + ivas) - pct
+        );
 
       if (scenarioCoefficient <= 0) return null;
 
@@ -1104,7 +1117,9 @@
       );
 
       const fullTotal = unitPrice * qty + collectedShip;
-      const netRevenue = unitPrice * qty / (1 + ivav) + shipNet;
+
+      const netRevenue =
+        unitPrice * qty / (1 + ivav) + shipNet;
 
       const scenarioContribution =
         netRevenue -
@@ -1117,9 +1132,9 @@
         marginRate,
         unitPrice,
         fullTotal,
-        contribution: scenarioContribution,
+        contribution:scenarioContribution,
         netRevenue,
-        effective: netRevenue > 0
+        effective:netRevenue > 0
           ? 100 * scenarioContribution / netRevenue
           : 0
       };
@@ -1127,9 +1142,12 @@
 
     const baseline = scenario(.40);
     const selected = scenario(m);
-    const scenarioMargins = [.20, .25, .30, .35, .40, .45, .50, .55];
-    const body = out('scenarios');
 
+    const scenarioMargins = [
+      .20,.25,.30,.35,.40,.45,.50,.55
+    ];
+
+    const body = out('scenarios');
     body.textContent = '';
 
     for (const rate of scenarioMargins){
@@ -1151,9 +1169,13 @@
       const values = [
         Math.round(rate * 100) + '%' +
           (rate === .40 ? ' · estándar' : ''),
+
         item ? fmt(item.unitPrice) : '—',
+
         item ? fmt(item.fullTotal) : '—',
+
         item ? fmt(item.contribution) : '—',
+
         difference === null
           ? '—'
           : (difference > 0 ? '+' : '') + fmt(difference)
@@ -1208,7 +1230,8 @@
 
     const standardUnit = standardCoefficient > 0
       ? ceil(
-          Math.max(0, standardCover) / (standardCoefficient * qty),
+          Math.max(0, standardCover) /
+          (standardCoefficient * qty),
           step
         )
       : 0;
@@ -1218,8 +1241,12 @@
       : 0;
 
     const current = val('current');
-    const currentRevenue = current * qty / (1 + ivav) + shipNet;
-    const currentTotal = current * qty + collectedShip;
+
+    const currentRevenue =
+      current * qty / (1 + ivav) + shipNet;
+
+    const currentTotal =
+      current * qty + collectedShip;
 
     const currentProfit =
       currentRevenue -
@@ -1240,21 +1267,28 @@
           ? 'Envío asumido: los gastos fijos y comisión se cubren en el precio, pero el flete reduce la ganancia.'
           : 'Envío, gastos fijos y comisión incorporados al precio.';
 
-    out('base').textContent = fmt(cc / (1 - m) * (1 + ivav));
+    out('base').textContent =
+      fmt(cc / (1 - m) * (1 + ivav));
 
     out('extraShip').textContent = mode === 'included'
       ? 'Incorporado en precio'
       : '—';
 
     out('baseCost').textContent = fmt(val('cost'));
-    out('buyVat').textContent = fmt(val('cost') * ivac);
+
+    out('buyVat').textContent =
+      fmt(val('cost') * ivac);
 
     out('dedVat').textContent = fmt(
-      input('ded').value === 'yes' ? val('cost') * ivac : 0
+      input('ded').value === 'yes'
+        ? val('cost') * ivac
+        : 0
     );
 
     out('nonDedVat').textContent = fmt(
-      input('ded').value === 'no' ? val('cost') * ivac : 0
+      input('ded').value === 'no'
+        ? val('cost') * ivac
+        : 0
     );
 
     out('accountCost').textContent = fmt(cc);
@@ -1273,8 +1307,12 @@
     out('products').textContent = fmt(unit * qty);
     out('shipCharged').textContent = fmt(collectedShip);
     out('total').textContent = fmt(total);
-    out('saleVat').textContent = fmt(unit * qty - productNet);
-    out('shipVat').textContent = fmt(collectedShip - shipNet);
+
+    out('saleVat').textContent =
+      fmt(unit * qty - productNet);
+
+    out('shipVat').textContent =
+      fmt(collectedShip - shipNet);
 
     out('tax').textContent = fmt(
       unit * qty - productNet + collectedShip - shipNet
@@ -1284,7 +1322,10 @@
     out('shippingCost').textContent = fmt(ship);
     out('fixed').textContent = fmt(fixed);
     out('commission').textContent = fmt(commission);
-    out('effective').textContent = eff.toFixed(2).replace('.', ',') + '%';
+
+    out('effective').textContent =
+      eff.toFixed(2).replace('.', ',') + '%';
+
     out('contribution').textContent = fmt(contribution);
     out('saving').textContent = fmt(saving);
 
@@ -1307,7 +1348,8 @@
         ' · margen después de gastos ' +
         (currentRevenue > 0
           ? (100 * currentProfit / currentRevenue)
-              .toFixed(2).replace('.', ',')
+              .toFixed(2)
+              .replace('.', ',')
           : '0') +
         '%'
       : '';
@@ -1316,7 +1358,9 @@
       'ORTOPÉDICOS Y SALUD',
       'Unidades: ' + qty,
       'Margen objetivo después de gastos: ' + (m * 100) + '%',
-      'Precio unitario: ' + (impossible ? 'No calculable' : fmt(unit)),
+      'Precio unitario: ' + (
+        impossible ? 'No calculable' : fmt(unit)
+      ),
       'Envío cobrado aparte: ' + fmt(collectedShip),
       'Total del pedido: ' + fmt(total),
       'Gastos fijos: ' + fmt(fixed),
@@ -1343,27 +1387,30 @@
     });
   });
 
-  root.querySelector('[data-action="reset"]').addEventListener('click', () => {
-    root.querySelectorAll('input').forEach(element => {
-      element.value = element.getAttribute('value') || '';
+  root.querySelector('[data-action="reset"]')
+    .addEventListener('click', () => {
+      root.querySelectorAll('input').forEach(element => {
+        element.value = element.getAttribute('value') || '';
+      });
+
+      root.querySelectorAll('select').forEach(element => {
+        const selectedOption =
+          element.querySelector('[selected]');
+
+        element.value = selectedOption
+          ? selectedOption.value
+          : element.options[0].value;
+      });
+
+      input('margin').value = marginByQty(
+        Math.max(1, Math.floor(val('qty')))
+      );
+
+      update();
     });
 
-    root.querySelectorAll('select').forEach(element => {
-      const selectedOption = element.querySelector('[selected]');
-
-      element.value = selectedOption
-        ? selectedOption.value
-        : element.options[0].value;
-    });
-
-    input('margin').value = marginByQty(
-      Math.max(1, Math.floor(val('qty')))
-    );
-
-    update();
-  });
-
-  const copyButton = root.querySelector('[data-action="copy"]');
+  const copyButton =
+    root.querySelector('[data-action="copy"]');
 
   copyButton.addEventListener('click', async () => {
     try {
